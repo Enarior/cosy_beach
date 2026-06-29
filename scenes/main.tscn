@@ -45,7 +45,9 @@ stretch = true
 stretch_shrink = 5
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1046456932]
+handle_input_locally = false
 size = Vector2i(256, 144)
+render_target_update_mode = 4
 
 [node name="View" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1735011217 node_paths=PackedStringArray("target")]
 transform = Transform3D(0.707107, -0.298836, 0.640856, 0, 0.906308, 0.422618, -0.707107, -0.298836, 0.640856, 0, 0, 0)

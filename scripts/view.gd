@@ -25,7 +25,7 @@ func _ready():
 func _physics_process(delta):
 	
 	# Set position and rotation to targets
-	
+
 	self.position = self.position.lerp(target.position, delta * 4)
 	rotation_degrees = rotation_degrees.lerp(camera_rotation, delta * 6)
 	
