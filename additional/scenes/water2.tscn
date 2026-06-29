@@ -8,7 +8,8 @@ subdivide_width = 200
 subdivide_depth = 200
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_nckmc"]
-noise_type = 3
+noise_type = 2
+frequency = 0.05
 fractal_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pqueh"]
@@ -18,7 +19,8 @@ as_normal_map = true
 bump_strength = 1.5
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_pqueh"]
-noise_type = 3
+noise_type = 2
+frequency = 0.05
 fractal_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nckmc"]
@@ -28,6 +30,7 @@ as_normal_map = true
 bump_strength = 1.5
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ii31o"]
+frequency = 0.005
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kl34p"]
 noise = SubResource("FastNoiseLite_ii31o")
@@ -36,29 +39,29 @@ seamless = true
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nckmc"]
 render_priority = 0
 shader = ExtResource("1_pqueh")
-shader_parameter/albedo = Color(3.0322374e-06, 0.43983123, 0.5841195, 1)
-shader_parameter/albedo2 = Color(0.21175274, 0.642193, 0.5080256, 1)
+shader_parameter/albedo = Color(2.695322e-06, 0.4813028, 0.6387571, 1)
+shader_parameter/albedo2 = Color(0, 0.27650404, 0.50905585, 1)
 shader_parameter/metallic = 0.0
-shader_parameter/roughness = 0.02
+shader_parameter/roughness = 0.30000001425
 shader_parameter/texture_normal = SubResource("NoiseTexture2D_pqueh")
 shader_parameter/texture_normal2 = SubResource("NoiseTexture2D_nckmc")
 shader_parameter/wave = SubResource("NoiseTexture2D_kl34p")
-shader_parameter/wave_direction = Vector2(2, 0)
-shader_parameter/wave_direction2 = Vector2(2, 0)
-shader_parameter/time_scale = 0.025
-shader_parameter/noise_scale = 10.0
-shader_parameter/height_scale = 0.15
+shader_parameter/wave_direction = Vector2(-0.5, 0.5)
+shader_parameter/wave_direction2 = Vector2(0.5, -0.5)
+shader_parameter/time_scale = 0.01499999966472
+shader_parameter/noise_scale = 12.0
+shader_parameter/height_scale = 0.2
 shader_parameter/color_deep = Color(0.36078432, 0.53333336, 0.4627451, 0.4392157)
 shader_parameter/color_shallow = Color(0.65410227, 0.08811078, 0.34678814, 0.4862745)
 shader_parameter/beers_law = 2.0
 shader_parameter/depth_offset = -0.75
-shader_parameter/edge_scale = 0.2
+shader_parameter/edge_scale = 0.1
 shader_parameter/near = 1.0
 shader_parameter/far = 100.0
-shader_parameter/edge_color = Color(0.32593372, 0.7143971, 0.815443, 1)
+shader_parameter/edge_color = Color(0.36587444, 0.7524983, 0.8554684, 1)
 
 [node name="Water2" type="MeshInstance3D" unique_id=768203770]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.043214023, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0436472, -0.00064568967, -0.000564456)
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_jfaa8")
 surface_material_override/0 = SubResource("ShaderMaterial_nckmc")

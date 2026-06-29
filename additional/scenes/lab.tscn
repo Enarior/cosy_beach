@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="5_wrpow"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_svqug"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+sky_top_color = Color(0.3544393, 0.45356596, 0.60316974, 1)
+sky_horizon_color = Color(0.77223665, 0.6260319, 0.4511155, 1)
 
 [sub_resource type="Sky" id="Sky_g72cs"]
 sky_material = SubResource("ProceduralSkyMaterial_svqug")
@@ -16,8 +16,21 @@ sky_material = SubResource("ProceduralSkyMaterial_svqug")
 [sub_resource type="Environment" id="Environment_wewm8"]
 background_mode = 2
 sky = SubResource("Sky_g72cs")
-tonemap_mode = 2
+ambient_light_sky_contribution = 0.65
+tonemap_mode = 3
+tonemap_white = 3.0
+ssao_enabled = true
 glow_enabled = true
+glow_levels/1 = 0.33
+glow_levels/4 = 0.5
+glow_levels/5 = 0.2
+glow_normalized = true
+glow_intensity = 0.12
+fog_enabled = true
+fog_light_color = Color(0.69836456, 0.621439, 0.5716115, 1)
+fog_density = 0.005
+fog_aerial_perspective = 0.75
+fog_sky_affect = 0.3
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_tl4jm"]
 
@@ -62,20 +75,9 @@ _shader_parameters = {
 &"projection_threshold": null
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wrpow"]
-transparency = 4
-cull_mode = 2
-vertex_color_use_as_albedo = true
-backlight_enabled = true
-backlight = Color(0.5, 0.5, 0.5, 1)
-distance_fade_mode = 1
-distance_fade_min_distance = 128.0
-distance_fade_max_distance = 96.0
-
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_svqug"]
-generated_type = 1
-height_offset = 0.5
-material_override = SubResource("StandardMaterial3D_wrpow")
+name = "water2"
+scene_file = ExtResource("2_il4d1")
 last_lod = 0
 last_shadow_lod = 0
 lod0_range = 128.0
@@ -96,13 +98,20 @@ texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_
 environment = SubResource("Environment_wewm8")
 camera_attributes = SubResource("CameraAttributesPractical_tl4jm")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=317656215]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-light_temperature = 3000.0
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=317656215]
+transform = Transform3D(-0.003820167, -0.008578729, -0.99995583, -0.0067495615, 0.9999407, -0.008552815, 0.9999699, 0.00671659, -0.0038778426, 0, 0, 0)
+light_temperature = 2250.0
+light_energy = 4.0
+light_specular = 4.0
 shadow_enabled = true
+directional_shadow_split_1 = 0.04
+directional_shadow_split_2 = 0.11
+directional_shadow_split_3 = 0.33
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 150.0
 
 [node name="Water2" parent="." unique_id=558614668 instance=ExtResource("2_il4d1")]
-transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 154.986, 1, -173.519)
+transform = Transform3D(-1213.4437, 0, -7.231008e-05, 0, 1, 0, 0.00010608262, 0, -827.1309, -427.086, 1, -173.519)
 
 [node name="Terrain3D" type="Terrain3D" parent="." unique_id=1860038789]
 data_directory = "res://additional/terrain3d"
@@ -115,7 +124,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.292, 2.1082504, -150.50632)
 
 [node name="Player" parent="." unique_id=555899566 groups=["player"] instance=ExtResource("5_wrpow")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.38196, 3.182045, -173.519)
+transform = Transform3D(0.036603574, 0, 0.99932986, 0, 1, 0, -0.99932986, 0, 0.036603574, 180.38196, 3.182045, -173.519)
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=863050878]
 transform = Transform3D(1, 0, 0, 0, 0.88212687, 0.47101188, 0, -0.47101188, 0.88212687, 0, 2, 3.269333)
