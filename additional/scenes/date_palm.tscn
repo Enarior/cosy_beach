@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d2nf7v0hr2bj6"]
+
+[ext_resource type="PackedScene" uid="uid://cdjeykyp2xslm" path="res://additional/models/date_palm.glb" id="1_ohgyy"]
+
+[node name="DatePalm" type="Node3D" unique_id=1397125997]
+
+[node name="Sketchfab_Scene" parent="." unique_id=1338073842 instance=ExtResource("1_ohgyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.018786669, -0.1433847, 0.0072404146)

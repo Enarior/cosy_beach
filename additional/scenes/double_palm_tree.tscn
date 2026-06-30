@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dohxyrdgeclnt"]
+
+[ext_resource type="PackedScene" uid="uid://dipnwm7hn74xm" path="res://additional/models/double_palm.glb" id="2_bbbpi"]
+
+[node name="DoublePalmTree" type="Node3D" unique_id=1515748229]
+
+[node name="Sketchfab_Scene" parent="." unique_id=231178573 instance=ExtResource("2_bbbpi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.034102857, -0.024677873, -0.039746284)

@@ -3,8 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://5e0i14uklshn" path="res://additional/textures/ground093a_albedo_height.dds" id="2_cynsr"]
 [ext_resource type="PackedScene" uid="uid://b1qotxbdn568d" path="res://additional/scenes/water2.tscn" id="2_il4d1"]
 [ext_resource type="Texture2D" uid="uid://bhqrowwejip4u" path="res://additional/textures/ground093a_roughness_normal.dds" id="3_81rqj"]
-[ext_resource type="PackedScene" uid="uid://dipnwm7hn74xm" path="res://additional/models/coconut_palm.glb" id="4_81rqj"]
+[ext_resource type="PackedScene" uid="uid://dohxyrdgeclnt" path="res://additional/scenes/double_palm_tree.tscn" id="4_svqug"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="5_wrpow"]
+[ext_resource type="Script" uid="uid://b5bjjutiu1e2b" path="res://addons/proton_scatter/src/scatter_item.gd" id="6_svqug"]
+[ext_resource type="Script" uid="uid://cjr2dvbfn8isb" path="res://addons/proton_scatter/src/scatter.gd" id="7_fgqhx"]
+[ext_resource type="Script" uid="uid://be6e6agngt02x" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="8_6o4ac"]
+[ext_resource type="Script" uid="uid://doa0hdkdvpown" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="9_64kn4"]
+[ext_resource type="Script" uid="uid://b7t1yf2nk8gcf" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="10_5iasx"]
+[ext_resource type="Script" uid="uid://05hr8405hwn3" path="res://addons/proton_scatter/src/scatter_shape.gd" id="11_81qat"]
+[ext_resource type="Script" uid="uid://b2yy1esiul338" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="11_jla3i"]
+[ext_resource type="Script" uid="uid://c64jygtak2rd0" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="12_1rhtx"]
+[ext_resource type="Script" uid="uid://cvqsqjrxfnh5a" path="res://addons/proton_scatter/src/modifiers/offset_position.gd" id="13_5iasx"]
+[ext_resource type="Script" uid="uid://d0qsx63v4ivar" path="res://addons/proton_scatter/src/modifiers/project_on_terrain3d.gd" id="13_lnpkw"]
+[ext_resource type="Script" uid="uid://qftly3spmmyh" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="15_knlgf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_svqug"]
 sky_top_color = Color(0.3544393, 0.45356596, 0.60316974, 1)
@@ -29,10 +40,14 @@ glow_levels/5 = 0.2
 glow_normalized = true
 glow_intensity = 0.12
 fog_enabled = true
-fog_light_color = Color(0.69836456, 0.621439, 0.5716115, 1)
-fog_density = 0.005
+fog_light_color = Color(0.38914138, 0.25880653, 0.16486529, 1)
+fog_sun_scatter = 0.05
+fog_density = 0.001
 fog_aerial_perspective = 0.75
 fog_sky_affect = 0.3
+fog_depth_curve = 73.51695
+fog_depth_begin = 265.5
+fog_depth_end = 265.5
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_tl4jm"]
 
@@ -77,12 +92,31 @@ _shader_parameters = {
 &"projection_threshold": null
 }
 
-[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_svqug"]
-name = "water2"
-scene_file = ExtResource("2_il4d1")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g72cs"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_wewm8"]
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_g72cs")
 last_lod = 0
 last_shadow_lod = 0
 lod0_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_tl4jm"]
+name = "palm_tree"
+id = 1
+scene_file = ExtResource("4_svqug")
+density = 0.01
+last_lod = 4
+last_shadow_lod = 4
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_wrpow"]
 name = "sand"
@@ -91,8 +125,92 @@ albedo_texture = ExtResource("2_cynsr")
 normal_texture = ExtResource("3_81rqj")
 
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_g72cs"]
-mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_svqug")])
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_wewm8"), SubResource("Terrain3DMeshAsset_tl4jm")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_wrpow")])
+
+[sub_resource type="Resource" id="Resource_5iasx"]
+script = ExtResource("10_5iasx")
+amount = 30
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_jla3i"]
+script = ExtResource("11_jla3i")
+position = Vector3(0.15, 0, 0.15)
+rotation = Vector3(12, 360, 12)
+scale = Vector3(-0.5, -0.5, -0.5)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_1rhtx"]
+script = ExtResource("12_1rhtx")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_lnpkw"]
+script = ExtResource("13_lnpkw")
+terrain_node = NodePath("../Terrain3D")
+
+[sub_resource type="Resource" id="Resource_km1h6"]
+script = ExtResource("13_5iasx")
+position = Vector3(0, -1, 0)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_mkir1"]
+script = ExtResource("8_6o4ac")
+stack = Array[ExtResource("9_64kn4")]([SubResource("Resource_5iasx"), SubResource("Resource_jla3i"), SubResource("Resource_1rhtx"), SubResource("Resource_lnpkw"), SubResource("Resource_km1h6")])
+
+[sub_resource type="Resource" id="Resource_knlgf"]
+script = ExtResource("15_knlgf")
+size = Vector3(20, 1, 200)
+metadata/_custom_type_script = "uid://qftly3spmmyh"
+
+[sub_resource type="Resource" id="Resource_b1ri8"]
+script = ExtResource("15_knlgf")
+size = Vector3(22.035, 5, 18)
+metadata/_custom_type_script = "uid://qftly3spmmyh"
+
+[sub_resource type="Resource" id="Resource_ha288"]
+script = ExtResource("10_5iasx")
+amount = 25
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_0tgwd"]
+script = ExtResource("11_jla3i")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(20, 360, 20)
+scale = Vector3(0.1, 0.1, 0.1)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_8asor"]
+script = ExtResource("12_1rhtx")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_gm3im"]
+script = ExtResource("13_lnpkw")
+terrain_node = NodePath("../Terrain3D")
+
+[sub_resource type="Resource" id="Resource_b2k3b"]
+script = ExtResource("13_5iasx")
+position = Vector3(0, -0.5, 0)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_wf4jf"]
+script = ExtResource("8_6o4ac")
+stack = Array[ExtResource("9_64kn4")]([SubResource("Resource_ha288"), SubResource("Resource_0tgwd"), SubResource("Resource_8asor"), SubResource("Resource_gm3im"), SubResource("Resource_b2k3b")])
+
+[sub_resource type="Resource" id="Resource_0mdt0"]
+script = ExtResource("15_knlgf")
+size = Vector3(20, 10, 200)
+metadata/_custom_type_script = "uid://qftly3spmmyh"
+
+[sub_resource type="Resource" id="Resource_kbiga"]
+script = ExtResource("15_knlgf")
+size = Vector3(22.035, 10, 18)
+metadata/_custom_type_script = "uid://qftly3spmmyh"
 
 [node name="Lab" type="Node3D" unique_id=1385512535]
 
@@ -103,8 +221,8 @@ camera_attributes = SubResource("CameraAttributesPractical_tl4jm")
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=317656215]
 transform = Transform3D(-0.003820167, -0.008578729, -0.99995583, -0.0067495615, 0.9999407, -0.008552815, 0.9999699, 0.00671659, -0.0038778426, 0, 0, 0)
 light_temperature = 2250.0
-light_energy = 4.0
-light_specular = 4.0
+light_energy = 3.5
+light_specular = 0.5
 shadow_enabled = true
 directional_shadow_split_1 = 0.04
 directional_shadow_split_2 = 0.11
@@ -114,10 +232,6 @@ directional_shadow_max_distance = 150.0
 
 [node name="Water2" parent="." unique_id=558614668 instance=ExtResource("2_il4d1")]
 transform = Transform3D(-1213.4437, 0, -7.231008e-05, 0, 1, 0, 0.00010608262, 0, -827.1309, -427.086, 1, -173.519)
-
-[node name="Palm tree" parent="." unique_id=1166756432 instance=ExtResource("4_81rqj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.292, 2.1082504, -150.50632)
-visible = false
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=416425784]
 texture_filter = 1
@@ -149,3 +263,71 @@ material = SubResource("Terrain3DMaterial_81rqj")
 assets = SubResource("Terrain3DAssets_g72cs")
 top_level = true
 metadata/_edit_lock_ = true
+
+[node name="ScatterPalmTrees" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1063796740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.24524, 4.859276, -66.87512)
+script = ExtResource("7_fgqhx")
+global_seed = 1
+modifier_stack = SubResource("Resource_mkir1")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://cjr2dvbfn8isb"
+
+[node name="ScatterItem" type="Node3D" parent="SubViewportContainer/SubViewport/ScatterPalmTrees" unique_id=1051432018]
+script = ExtResource("6_svqug")
+source_scale_multiplier = 0.04
+path = "uid://dohxyrdgeclnt"
+
+[node name="Hill" type="Node3D" parent="SubViewportContainer/SubViewport/ScatterPalmTrees" unique_id=471410859]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 39.94484, 7, -52.611908)
+visible = false
+script = ExtResource("11_81qat")
+shape = SubResource("Resource_knlgf")
+
+[node name="ProtonScatterItem" type="Node3D" parent="SubViewportContainer/SubViewport/ScatterPalmTrees" unique_id=44438670]
+script = ExtResource("6_svqug")
+source_scale_multiplier = 0.12
+path = "uid://b215goeujblv5"
+metadata/_custom_type_script = "uid://b5bjjutiu1e2b"
+
+[node name="PathNegative" type="Node3D" parent="SubViewportContainer/SubViewport/ScatterPalmTrees" unique_id=893816931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 8, -46)
+visible = false
+script = ExtResource("11_81qat")
+negative = true
+shape = SubResource("Resource_b1ri8")
+metadata/_custom_type_script = "uid://05hr8405hwn3"
+
+[node name="ProtonScatterItem2" type="Node3D" parent="SubViewportContainer/SubViewport/ScatterPalmTrees" unique_id=427461465]
+script = ExtResource("6_svqug")
+proportion = 0
+path = "uid://b215goeujblv5"
+metadata/_custom_type_script = "uid://b5bjjutiu1e2b"
+
+[node name="ScatterPlants" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=459642262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175, 9, -128)
+script = ExtResource("7_fgqhx")
+modifier_stack = SubResource("Resource_wf4jf")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://cjr2dvbfn8isb"
+
+[node name="ScatterItem" type="Node3D" parent="SubViewportContainer/SubViewport/ScatterPlants" unique_id=526610314]
+script = ExtResource("6_svqug")
+proportion = 1
+source_scale_multiplier = 0.02
+path = "uid://qm0dyq53t84t"
+
+[node name="ScatterShape" type="Node3D" parent="SubViewportContainer/SubViewport/ScatterPlants" unique_id=1163581581]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 5, -3, 0)
+visible = false
+script = ExtResource("11_81qat")
+shape = SubResource("Resource_0mdt0")
+
+[node name="PathNegative" type="Node3D" parent="SubViewportContainer/SubViewport/ScatterPlants" unique_id=33919515]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 16)
+visible = false
+script = ExtResource("11_81qat")
+negative = true
+shape = SubResource("Resource_kbiga")
+metadata/_custom_type_script = "uid://05hr8405hwn3"
