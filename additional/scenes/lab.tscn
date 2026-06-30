@@ -19,6 +19,8 @@ sky = SubResource("Sky_g72cs")
 ambient_light_sky_contribution = 0.65
 tonemap_mode = 3
 tonemap_white = 3.0
+ssr_fade_in = 0.59999937
+ssr_fade_out = 0.43527532
 ssao_enabled = true
 glow_enabled = true
 glow_levels/1 = 0.33
@@ -113,18 +115,37 @@ directional_shadow_max_distance = 150.0
 [node name="Water2" parent="." unique_id=558614668 instance=ExtResource("2_il4d1")]
 transform = Transform3D(-1213.4437, 0, -7.231008e-05, 0, 1, 0, 0.00010608262, 0, -827.1309, -427.086, 1, -173.519)
 
-[node name="Terrain3D" type="Terrain3D" parent="." unique_id=1860038789]
+[node name="Palm tree" parent="." unique_id=1166756432 instance=ExtResource("4_81rqj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.292, 2.1082504, -150.50632)
+visible = false
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=416425784]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 4
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1538884301]
+handle_input_locally = false
+size = Vector2i(320, 180)
+render_target_update_mode = 4
+
+[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=555899566 groups=["player"] instance=ExtResource("5_wrpow")]
+transform = Transform3D(0.036603574, 0, 0.99932986, 0, 1, 0, -0.99932986, 0, 0.036603574, 180.38196, 3.182045, -173.519)
+visible = false
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Player" unique_id=863050878]
+transform = Transform3D(0.99998176, 0.005547126, 0.0023968183, -0.006022198, 0.9475473, 0.31955883, -0.00049846247, -0.3195674, 0.94756347, 0, 1.0667052, 3.269333)
+projection = 1
+size = 10.0
+
+[node name="Terrain3D" type="Terrain3D" parent="SubViewportContainer/SubViewport" unique_id=1320876371]
 data_directory = "res://additional/terrain3d"
 material = SubResource("Terrain3DMaterial_81rqj")
 assets = SubResource("Terrain3DAssets_g72cs")
 top_level = true
 metadata/_edit_lock_ = true
-
-[node name="Sketchfab_Scene" parent="." unique_id=1166756432 instance=ExtResource("4_81rqj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.292, 2.1082504, -150.50632)
-
-[node name="Player" parent="." unique_id=555899566 groups=["player"] instance=ExtResource("5_wrpow")]
-transform = Transform3D(0.036603574, 0, 0.99932986, 0, 1, 0, -0.99932986, 0, 0.036603574, 180.38196, 3.182045, -173.519)
-
-[node name="Camera3D" type="Camera3D" parent="Player" unique_id=863050878]
-transform = Transform3D(1, 0, 0, 0, 0.88212687, 0.47101188, 0, -0.47101188, 0.88212687, 0, 2, 3.269333)
