@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://qm0dyq53t84t"]
 
 [ext_resource type="PackedScene" uid="uid://cwxt50yai6e5s" path="res://additional/models/banana_plant.glb" id="1_jhpg3"]
+[ext_resource type="AnimationLibrary" uid="uid://cc5inweyv5hb1" path="res://additional/animations/trees_anim_library.res" id="2_ebb78"]
 
 [node name="BananaPlant" type="Node3D" unique_id=1044474303]
 
 [node name="Sketchfab_Scene" parent="." unique_id=1551067091 instance=ExtResource("1_jhpg3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00884068, -0.10283929, 0.006575972)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1103901357]
+libraries/trees_anim_library = ExtResource("2_ebb78")
+autoplay = &"trees_anim_library/wind"

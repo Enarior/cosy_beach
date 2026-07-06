@@ -233,38 +233,17 @@ directional_shadow_max_distance = 150.0
 [node name="Water2" parent="." unique_id=558614668 instance=ExtResource("2_il4d1")]
 transform = Transform3D(-1213.4437, 0, -7.231008e-05, 0, 1, 0, 0.00010608262, 0, -827.1309, -427.086, 1, -173.519)
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=416425784]
-texture_filter = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-stretch_shrink = 4
+[node name="Player" parent="." unique_id=555899566 groups=["player"] instance=ExtResource("5_wrpow")]
+transform = Transform3D(-0.036603488, 0, -0.99932986, 0, 1, 0, 0.99932986, 0, -0.036603488, 159.38196, 5.182045, -147.519)
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1538884301]
-handle_input_locally = false
-size = Vector2i(320, 180)
-render_target_update_mode = 4
-
-[node name="Player" parent="SubViewportContainer/SubViewport" unique_id=555899566 groups=["player"] instance=ExtResource("5_wrpow")]
-transform = Transform3D(0.036603574, 0, 0.99932986, 0, 1, 0, -0.99932986, 0, 0.036603574, 180.38196, 3.182045, -173.519)
-visible = false
-
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Player" unique_id=863050878]
-transform = Transform3D(0.99998176, 0.005547126, 0.0023968183, -0.006022198, 0.9475473, 0.31955883, -0.00049846247, -0.3195674, 0.94756347, 0, 1.0667052, 3.269333)
-projection = 1
-size = 10.0
-
-[node name="Terrain3D" type="Terrain3D" parent="SubViewportContainer/SubViewport" unique_id=1320876371]
+[node name="Terrain3D" type="Terrain3D" parent="." unique_id=1320876371]
 data_directory = "res://additional/terrain3d"
 material = SubResource("Terrain3DMaterial_81rqj")
 assets = SubResource("Terrain3DAssets_g72cs")
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="ScatterPalmTrees" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1063796740]
+[node name="ScatterPalmTrees" type="Node3D" parent="." unique_id=1063796740]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.24524, 4.859276, -66.87512)
 script = ExtResource("7_fgqhx")
 global_seed = 1
@@ -273,24 +252,24 @@ Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://cjr2dvbfn8isb"
 
-[node name="ScatterItem" type="Node3D" parent="SubViewportContainer/SubViewport/ScatterPalmTrees" unique_id=1051432018]
+[node name="ScatterItem" type="Node3D" parent="ScatterPalmTrees" unique_id=1051432018]
 script = ExtResource("6_svqug")
 source_scale_multiplier = 0.04
 path = "uid://dohxyrdgeclnt"
 
-[node name="Hill" type="Node3D" parent="SubViewportContainer/SubViewport/ScatterPalmTrees" unique_id=471410859]
+[node name="Hill" type="Node3D" parent="ScatterPalmTrees" unique_id=471410859]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 39.94484, 7, -52.611908)
 visible = false
 script = ExtResource("11_81qat")
 shape = SubResource("Resource_knlgf")
 
-[node name="ProtonScatterItem" type="Node3D" parent="SubViewportContainer/SubViewport/ScatterPalmTrees" unique_id=44438670]
+[node name="ProtonScatterItem" type="Node3D" parent="ScatterPalmTrees" unique_id=44438670]
 script = ExtResource("6_svqug")
 source_scale_multiplier = 0.12
 path = "uid://b215goeujblv5"
 metadata/_custom_type_script = "uid://b5bjjutiu1e2b"
 
-[node name="PathNegative" type="Node3D" parent="SubViewportContainer/SubViewport/ScatterPalmTrees" unique_id=893816931]
+[node name="PathNegative" type="Node3D" parent="ScatterPalmTrees" unique_id=893816931]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 8, -46)
 visible = false
 script = ExtResource("11_81qat")
@@ -298,13 +277,13 @@ negative = true
 shape = SubResource("Resource_b1ri8")
 metadata/_custom_type_script = "uid://05hr8405hwn3"
 
-[node name="ProtonScatterItem2" type="Node3D" parent="SubViewportContainer/SubViewport/ScatterPalmTrees" unique_id=427461465]
+[node name="ProtonScatterItem2" type="Node3D" parent="ScatterPalmTrees" unique_id=427461465]
 script = ExtResource("6_svqug")
 proportion = 0
 path = "uid://b215goeujblv5"
 metadata/_custom_type_script = "uid://b5bjjutiu1e2b"
 
-[node name="ScatterPlants" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=459642262]
+[node name="ScatterPlants" type="Node3D" parent="." unique_id=459642262]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175, 9, -128)
 script = ExtResource("7_fgqhx")
 modifier_stack = SubResource("Resource_wf4jf")
@@ -312,19 +291,19 @@ Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://cjr2dvbfn8isb"
 
-[node name="ScatterItem" type="Node3D" parent="SubViewportContainer/SubViewport/ScatterPlants" unique_id=526610314]
+[node name="ScatterItem" type="Node3D" parent="ScatterPlants" unique_id=526610314]
 script = ExtResource("6_svqug")
 proportion = 1
 source_scale_multiplier = 0.02
 path = "uid://qm0dyq53t84t"
 
-[node name="ScatterShape" type="Node3D" parent="SubViewportContainer/SubViewport/ScatterPlants" unique_id=1163581581]
+[node name="ScatterShape" type="Node3D" parent="ScatterPlants" unique_id=1163581581]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 5, -3, 0)
 visible = false
 script = ExtResource("11_81qat")
 shape = SubResource("Resource_0mdt0")
 
-[node name="PathNegative" type="Node3D" parent="SubViewportContainer/SubViewport/ScatterPlants" unique_id=33919515]
+[node name="PathNegative" type="Node3D" parent="ScatterPlants" unique_id=33919515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 16)
 visible = false
 script = ExtResource("11_81qat")
