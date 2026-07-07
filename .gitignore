@@ -17,3 +17,5 @@ mono_crash.*.json
 # Kenney ignores
 build/
 
+# add-ons .import
+addons/**/*.import
