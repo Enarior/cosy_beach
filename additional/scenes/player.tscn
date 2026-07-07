@@ -47,26 +47,23 @@ shape = SubResource("CapsuleShape3D_gdq8c")
 [node name="Character" parent="." unique_id=32569941 instance=ExtResource("2_nero3")]
 unique_name_in_owner = true
 
-[node name="root" parent="Character/character" parent_id_path=PackedInt32Array(32569941, 644755236) index="0" unique_id=1630178105]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.022760417, 8.6478974e-17)
+[node name="leg-left" parent="Character/character/root" parent_id_path=PackedInt32Array(32569941, 445207173) index="0" unique_id=278451939]
+transform = Transform3D(0.96592593, 0, 0.2588191, 0, 1, 0, -0.2588191, 0, 0.96592593, 0.125, 0.17625, -0.02375)
 
-[node name="leg-left" parent="Character/character/root" index="0" unique_id=1427265983]
-transform = Transform3D(0.9686917, 0, 0.24826728, 0, 1, 0, -0.24826728, 0, 0.9686917, 0.11979167, 0.16890626, -0.022760417)
+[node name="leg-right" parent="Character/character/root" parent_id_path=PackedInt32Array(32569941, 445207173) index="1" unique_id=322904534]
+transform = Transform3D(0.96592593, 0, -0.2588191, 0, 1, 0, 0.2588191, 0, 0.96592593, -0.125, 0.17625, -0.023750002)
 
-[node name="leg-right" parent="Character/character/root" index="1" unique_id=1696747505]
-transform = Transform3D(0.9686917, 0, -0.24826728, 0, 1, 0, 0.24826728, 0, 0.9686917, -0.11979167, 0.16890626, -0.02276042)
+[node name="torso" parent="Character/character/root" parent_id_path=PackedInt32Array(32569941, 445207173) index="2" unique_id=1221158308]
+transform = Transform3D(1, 0, 0, 0, 0.99619395, 0.08715567, 0, -0.08715567, 0.99619395, -1.80478e-15, 0.17625, -0.02375)
 
-[node name="torso" parent="Character/character/root" index="2" unique_id=2145248597]
-transform = Transform3D(1, 0, 0, 0, 0.9966011, 0.082369685, 0, -0.082369685, 0.9966011, -1.80478e-15, 0.17625, -0.02375)
+[node name="arm-left" parent="Character/character/root/torso" index="0" unique_id=85509740]
+transform = Transform3D(0.70710695, 0.70710695, 0, -0.70710695, 0.70710695, 0, 0, 0, 1, 0.3, 0.175, 0)
 
-[node name="arm-left" parent="Character/character/root/torso" index="0" unique_id=795950488]
-transform = Transform3D(0.73225343, 0.6810326, 0, -0.6810326, 0.73225343, 0, 0, 0, 1, 0.3, 0.175, 0)
+[node name="arm-right" parent="Character/character/root/torso" index="1" unique_id=1954205977]
+transform = Transform3D(0.70710695, -0.70710695, 0, 0.70710695, 0.70710695, 0, 0, 0, 1, -0.3, 0.1195, 0)
 
-[node name="arm-right" parent="Character/character/root/torso" index="1" unique_id=1987985871]
-transform = Transform3D(0.73225343, -0.6810326, 0, 0.6810326, 0.73225343, 0, 0, 0, 1, -0.3, 0.1195, 0)
-
-[node name="antenna" parent="Character/character/root/torso" index="2" unique_id=690724269]
-transform = Transform3D(1, 0, 0, 0, 0.99999624, 0.0023343738, 0, -0.0023343738, 0.99999624, 0, 0.6, 0)
+[node name="antenna" parent="Character/character/root/torso" index="2" unique_id=332244988]
+transform = Transform3D(1, 0, 0, 0, 0.9999989, 0, 0, 0, 0.9999989, 0, 0.6, 0)
 
 [node name="Shadow" type="Decal" parent="." unique_id=663775558]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
@@ -98,7 +95,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 shape = SubResource("SphereShape3D_f46kd")
 spring_length = 6.0
 
-[node name="Camera" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=1662852955]
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=1662852955]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 6.3573026e-08, 0, 1, 0, -6.3573026e-08, 0, 1, 2.542921e-07, 0, 2.2230922e-14)
 

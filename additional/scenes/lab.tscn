@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://6rgd4nt8x1a6"]
 
+[ext_resource type="Script" uid="uid://b41wfe3e4hc7v" path="res://additional/scenes/lab.gd" id="1_5iasx"]
 [ext_resource type="Texture2D" uid="uid://5e0i14uklshn" path="res://additional/textures/ground093a_albedo_height.dds" id="2_cynsr"]
 [ext_resource type="PackedScene" uid="uid://b1qotxbdn568d" path="res://additional/scenes/water2.tscn" id="2_il4d1"]
 [ext_resource type="Texture2D" uid="uid://bhqrowwejip4u" path="res://additional/textures/ground093a_roughness_normal.dds" id="3_81rqj"]
 [ext_resource type="PackedScene" uid="uid://dohxyrdgeclnt" path="res://additional/scenes/double_palm_tree.tscn" id="4_svqug"]
-[ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="5_wrpow"]
 [ext_resource type="Script" uid="uid://b5bjjutiu1e2b" path="res://addons/proton_scatter/src/scatter_item.gd" id="6_svqug"]
 [ext_resource type="Script" uid="uid://cjr2dvbfn8isb" path="res://addons/proton_scatter/src/scatter.gd" id="7_fgqhx"]
 [ext_resource type="Script" uid="uid://be6e6agngt02x" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="8_6o4ac"]
@@ -149,7 +149,7 @@ restrict_height = true
 
 [sub_resource type="Resource" id="Resource_lnpkw"]
 script = ExtResource("13_lnpkw")
-terrain_node = NodePath("../Terrain3D")
+terrain_node = NodePath("../../Terrain3D")
 
 [sub_resource type="Resource" id="Resource_km1h6"]
 script = ExtResource("13_5iasx")
@@ -162,13 +162,128 @@ stack = Array[ExtResource("9_64kn4")]([SubResource("Resource_5iasx"), SubResourc
 
 [sub_resource type="Resource" id="Resource_knlgf"]
 script = ExtResource("15_knlgf")
-size = Vector3(20, 1, 200)
+size = Vector3(20, 10, 200)
 metadata/_custom_type_script = "uid://qftly3spmmyh"
 
 [sub_resource type="Resource" id="Resource_b1ri8"]
 script = ExtResource("15_knlgf")
 size = Vector3(22.035, 5, 18)
 metadata/_custom_type_script = "uid://qftly3spmmyh"
+
+[sub_resource type="Resource" id="Resource_60rcv"]
+script = ExtResource("10_5iasx")
+amount = 12
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_kpkyg"]
+script = ExtResource("11_jla3i")
+position = Vector3(0.15, 0, 0.15)
+rotation = Vector3(12, 360, 12)
+scale = Vector3(-0.5, -0.5, -0.5)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_aqjxa"]
+script = ExtResource("12_1rhtx")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_o1i1g"]
+script = ExtResource("13_lnpkw")
+terrain_node = NodePath("../../Terrain3D")
+
+[sub_resource type="Resource" id="Resource_lfw1g"]
+script = ExtResource("13_5iasx")
+position = Vector3(0, -1, 0)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_6dbdk"]
+script = ExtResource("8_6o4ac")
+stack = Array[ExtResource("9_64kn4")]([SubResource("Resource_60rcv"), SubResource("Resource_kpkyg"), SubResource("Resource_aqjxa"), SubResource("Resource_o1i1g"), SubResource("Resource_lfw1g")])
+
+[sub_resource type="Resource" id="Resource_o5dwa"]
+script = ExtResource("15_knlgf")
+size = Vector3(20, 10, 200)
+
+[sub_resource type="Resource" id="Resource_ja3ic"]
+script = ExtResource("15_knlgf")
+size = Vector3(22.035, 5, 18)
+
+[sub_resource type="Resource" id="Resource_qhjov"]
+script = ExtResource("10_5iasx")
+amount = 12
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_gvfqy"]
+script = ExtResource("11_jla3i")
+position = Vector3(0.15, 0, 0.15)
+rotation = Vector3(12, 360, 12)
+scale = Vector3(-0.5, -0.5, -0.5)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_g6x5u"]
+script = ExtResource("12_1rhtx")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_13ehr"]
+script = ExtResource("13_lnpkw")
+terrain_node = NodePath("../../Terrain3D")
+max_slope = 40.0
+
+[sub_resource type="Resource" id="Resource_ito1m"]
+script = ExtResource("13_5iasx")
+position = Vector3(0, -1, 0)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_08dt1"]
+script = ExtResource("8_6o4ac")
+stack = Array[ExtResource("9_64kn4")]([SubResource("Resource_qhjov"), SubResource("Resource_gvfqy"), SubResource("Resource_g6x5u"), SubResource("Resource_13ehr"), SubResource("Resource_ito1m")])
+
+[sub_resource type="Resource" id="Resource_71anj"]
+script = ExtResource("15_knlgf")
+size = Vector3(50, 1, 40)
+metadata/_custom_type_script = "uid://qftly3spmmyh"
+
+[sub_resource type="Resource" id="Resource_1c0ro"]
+script = ExtResource("10_5iasx")
+amount = 12
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_5huug"]
+script = ExtResource("11_jla3i")
+position = Vector3(0.15, 0, 0.15)
+rotation = Vector3(12, 360, 12)
+scale = Vector3(-0.5, -0.5, -0.5)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_qejn6"]
+script = ExtResource("12_1rhtx")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_jicfy"]
+script = ExtResource("13_lnpkw")
+terrain_node = NodePath("../../Terrain3D")
+max_slope = 40.0
+
+[sub_resource type="Resource" id="Resource_qmxfp"]
+script = ExtResource("13_5iasx")
+position = Vector3(0, -1, 0)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_7tt7y"]
+script = ExtResource("8_6o4ac")
+stack = Array[ExtResource("9_64kn4")]([SubResource("Resource_1c0ro"), SubResource("Resource_5huug"), SubResource("Resource_qejn6"), SubResource("Resource_jicfy"), SubResource("Resource_qmxfp")])
+
+[sub_resource type="Resource" id="Resource_hakwv"]
+script = ExtResource("15_knlgf")
+size = Vector3(50, 1, 30)
 
 [sub_resource type="Resource" id="Resource_ha288"]
 script = ExtResource("10_5iasx")
@@ -191,7 +306,7 @@ restrict_height = true
 
 [sub_resource type="Resource" id="Resource_gm3im"]
 script = ExtResource("13_lnpkw")
-terrain_node = NodePath("../Terrain3D")
+terrain_node = NodePath("../../Terrain3D")
 
 [sub_resource type="Resource" id="Resource_b2k3b"]
 script = ExtResource("13_5iasx")
@@ -212,7 +327,121 @@ script = ExtResource("15_knlgf")
 size = Vector3(22.035, 10, 18)
 metadata/_custom_type_script = "uid://qftly3spmmyh"
 
-[node name="Lab" type="Node3D" unique_id=1385512535]
+[sub_resource type="Resource" id="Resource_vbnfr"]
+script = ExtResource("10_5iasx")
+amount = 25
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_d35wg"]
+script = ExtResource("11_jla3i")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(20, 360, 20)
+scale = Vector3(0.1, 0.1, 0.1)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_rkb6l"]
+script = ExtResource("12_1rhtx")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_x0k1x"]
+script = ExtResource("13_lnpkw")
+terrain_node = NodePath("../../Terrain3D")
+
+[sub_resource type="Resource" id="Resource_57ce0"]
+script = ExtResource("13_5iasx")
+position = Vector3(0, -0.5, 0)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_518iw"]
+script = ExtResource("8_6o4ac")
+stack = Array[ExtResource("9_64kn4")]([SubResource("Resource_vbnfr"), SubResource("Resource_d35wg"), SubResource("Resource_rkb6l"), SubResource("Resource_x0k1x"), SubResource("Resource_57ce0")])
+
+[sub_resource type="Resource" id="Resource_weu5v"]
+script = ExtResource("15_knlgf")
+size = Vector3(20, 10, 200)
+
+[sub_resource type="Resource" id="Resource_bvbmf"]
+script = ExtResource("15_knlgf")
+size = Vector3(22.035, 10, 18)
+
+[sub_resource type="Resource" id="Resource_6xw3y"]
+script = ExtResource("10_5iasx")
+amount = 8
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_bfprc"]
+script = ExtResource("11_jla3i")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(20, 360, 20)
+scale = Vector3(0.1, 0.1, 0.1)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_4th5n"]
+script = ExtResource("12_1rhtx")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_y2wh5"]
+script = ExtResource("13_lnpkw")
+terrain_node = NodePath("../../Terrain3D")
+
+[sub_resource type="Resource" id="Resource_xc2m5"]
+script = ExtResource("13_5iasx")
+position = Vector3(0, -0.5, 0)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_b105l"]
+script = ExtResource("8_6o4ac")
+stack = Array[ExtResource("9_64kn4")]([SubResource("Resource_6xw3y"), SubResource("Resource_bfprc"), SubResource("Resource_4th5n"), SubResource("Resource_y2wh5"), SubResource("Resource_xc2m5")])
+
+[sub_resource type="Resource" id="Resource_fskly"]
+script = ExtResource("15_knlgf")
+size = Vector3(50, 10, 20)
+
+[sub_resource type="Resource" id="Resource_7eyca"]
+script = ExtResource("10_5iasx")
+amount = 8
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_2kwhs"]
+script = ExtResource("11_jla3i")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(20, 360, 20)
+scale = Vector3(0.1, 0.1, 0.1)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_4rrue"]
+script = ExtResource("12_1rhtx")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_qaine"]
+script = ExtResource("13_lnpkw")
+terrain_node = NodePath("../../Terrain3D")
+
+[sub_resource type="Resource" id="Resource_gtqea"]
+script = ExtResource("13_5iasx")
+position = Vector3(0, -0.5, 0)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_522vh"]
+script = ExtResource("8_6o4ac")
+stack = Array[ExtResource("9_64kn4")]([SubResource("Resource_7eyca"), SubResource("Resource_2kwhs"), SubResource("Resource_4rrue"), SubResource("Resource_qaine"), SubResource("Resource_gtqea")])
+
+[sub_resource type="Resource" id="Resource_se2yi"]
+script = ExtResource("15_knlgf")
+size = Vector3(50, 10, 20)
+
+[node name="Lab" type="Node3D" unique_id=1385512535 node_paths=PackedStringArray("cameras")]
+script = ExtResource("1_5iasx")
+cameras = [NodePath("SpringArm3D/Camera3D"), NodePath("SpringArm3D2/Camera3D"), NodePath("SpringArm3D3/Camera3D")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1777604061]
 environment = SubResource("Environment_wewm8")
@@ -233,9 +462,6 @@ directional_shadow_max_distance = 150.0
 [node name="Water2" parent="." unique_id=558614668 instance=ExtResource("2_il4d1")]
 transform = Transform3D(-1213.4437, 0, -7.231008e-05, 0, 1, 0, 0.00010608262, 0, -827.1309, -427.086, 1, -173.519)
 
-[node name="Player" parent="." unique_id=555899566 groups=["player"] instance=ExtResource("5_wrpow")]
-transform = Transform3D(-0.036603488, 0, -0.99932986, 0, 1, 0, 0.99932986, 0, -0.036603488, 159.38196, 5.182045, -147.519)
-
 [node name="Terrain3D" type="Terrain3D" parent="." unique_id=1320876371]
 data_directory = "res://additional/terrain3d"
 material = SubResource("Terrain3DMaterial_81rqj")
@@ -243,7 +469,9 @@ assets = SubResource("Terrain3DAssets_g72cs")
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="ScatterPalmTrees" type="Node3D" parent="." unique_id=1063796740]
+[node name="Scatter" type="Node3D" parent="." unique_id=1370399289]
+
+[node name="ScatterPalmTrees" type="Node3D" parent="Scatter" unique_id=1063796740]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.24524, 4.859276, -66.87512)
 script = ExtResource("7_fgqhx")
 global_seed = 1
@@ -252,38 +480,112 @@ Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://cjr2dvbfn8isb"
 
-[node name="ScatterItem" type="Node3D" parent="ScatterPalmTrees" unique_id=1051432018]
+[node name="ScatterItem" type="Node3D" parent="Scatter/ScatterPalmTrees" unique_id=1051432018]
 script = ExtResource("6_svqug")
 source_scale_multiplier = 0.04
 path = "uid://dohxyrdgeclnt"
 
-[node name="Hill" type="Node3D" parent="ScatterPalmTrees" unique_id=471410859]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 39.94484, 7, -52.611908)
-visible = false
+[node name="Hill" type="Node3D" parent="Scatter/ScatterPalmTrees" unique_id=471410859]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 35.89946, 7, -52.611908)
 script = ExtResource("11_81qat")
 shape = SubResource("Resource_knlgf")
 
-[node name="ProtonScatterItem" type="Node3D" parent="ScatterPalmTrees" unique_id=44438670]
+[node name="ProtonScatterItem" type="Node3D" parent="Scatter/ScatterPalmTrees" unique_id=44438670]
 script = ExtResource("6_svqug")
 source_scale_multiplier = 0.12
 path = "uid://b215goeujblv5"
 metadata/_custom_type_script = "uid://b5bjjutiu1e2b"
 
-[node name="PathNegative" type="Node3D" parent="ScatterPalmTrees" unique_id=893816931]
+[node name="PathNegative" type="Node3D" parent="Scatter/ScatterPalmTrees" unique_id=893816931]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 8, -46)
-visible = false
 script = ExtResource("11_81qat")
 negative = true
 shape = SubResource("Resource_b1ri8")
 metadata/_custom_type_script = "uid://05hr8405hwn3"
 
-[node name="ProtonScatterItem2" type="Node3D" parent="ScatterPalmTrees" unique_id=427461465]
+[node name="ScatterPalmTreesHilltop" type="Node3D" parent="Scatter" unique_id=834927726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.60025, 4.859276, -66.87512)
+script = ExtResource("7_fgqhx")
+global_seed = 1
+modifier_stack = SubResource("Resource_6dbdk")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://cjr2dvbfn8isb"
+
+[node name="ScatterItem" type="Node3D" parent="Scatter/ScatterPalmTreesHilltop" unique_id=91484639]
 script = ExtResource("6_svqug")
-proportion = 0
+source_scale_multiplier = 0.04
+path = "uid://dohxyrdgeclnt"
+
+[node name="Hill" type="Node3D" parent="Scatter/ScatterPalmTreesHilltop" unique_id=921325289]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 35.89946, 7, -52.611908)
+script = ExtResource("11_81qat")
+shape = SubResource("Resource_o5dwa")
+
+[node name="ProtonScatterItem" type="Node3D" parent="Scatter/ScatterPalmTreesHilltop" unique_id=477309838]
+script = ExtResource("6_svqug")
+source_scale_multiplier = 0.12
 path = "uid://b215goeujblv5"
 metadata/_custom_type_script = "uid://b5bjjutiu1e2b"
 
-[node name="ScatterPlants" type="Node3D" parent="." unique_id=459642262]
+[node name="PathNegative" type="Node3D" parent="Scatter/ScatterPalmTreesHilltop" unique_id=1246035599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 8, -46)
+script = ExtResource("11_81qat")
+negative = true
+shape = SubResource("Resource_ja3ic")
+metadata/_custom_type_script = "uid://05hr8405hwn3"
+
+[node name="ScatterPalmTreesLeft" type="Node3D" parent="Scatter" unique_id=407390780]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.24524, 4.859276, -66.87512)
+script = ExtResource("7_fgqhx")
+global_seed = 1
+modifier_stack = SubResource("Resource_08dt1")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://cjr2dvbfn8isb"
+
+[node name="ScatterItem" type="Node3D" parent="Scatter/ScatterPalmTreesLeft" unique_id=1297917196]
+script = ExtResource("6_svqug")
+source_scale_multiplier = 0.04
+path = "uid://dohxyrdgeclnt"
+
+[node name="Hill" type="Node3D" parent="Scatter/ScatterPalmTreesLeft" unique_id=184915287]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 17.211197, 7, -163.48433)
+script = ExtResource("11_81qat")
+shape = SubResource("Resource_71anj")
+
+[node name="ProtonScatterItem" type="Node3D" parent="Scatter/ScatterPalmTreesLeft" unique_id=1766713023]
+script = ExtResource("6_svqug")
+source_scale_multiplier = 0.12
+path = "uid://b215goeujblv5"
+metadata/_custom_type_script = "uid://b5bjjutiu1e2b"
+
+[node name="ScatterPalmTreesRight" type="Node3D" parent="Scatter" unique_id=485339484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.24524, 4.859276, -66.87512)
+script = ExtResource("7_fgqhx")
+global_seed = 1
+modifier_stack = SubResource("Resource_7tt7y")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://cjr2dvbfn8isb"
+
+[node name="ScatterItem" type="Node3D" parent="Scatter/ScatterPalmTreesRight" unique_id=1274247982]
+script = ExtResource("6_svqug")
+source_scale_multiplier = 0.04
+path = "uid://dohxyrdgeclnt"
+
+[node name="Hill" type="Node3D" parent="Scatter/ScatterPalmTreesRight" unique_id=1585743547]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 17.211197, 7, 37.952126)
+script = ExtResource("11_81qat")
+shape = SubResource("Resource_hakwv")
+
+[node name="ProtonScatterItem" type="Node3D" parent="Scatter/ScatterPalmTreesRight" unique_id=1888524261]
+script = ExtResource("6_svqug")
+source_scale_multiplier = 0.12
+path = "uid://b215goeujblv5"
+metadata/_custom_type_script = "uid://b5bjjutiu1e2b"
+
+[node name="ScatterPlants" type="Node3D" parent="Scatter" unique_id=459642262]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175, 9, -128)
 script = ExtResource("7_fgqhx")
 modifier_stack = SubResource("Resource_wf4jf")
@@ -291,22 +593,106 @@ Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://cjr2dvbfn8isb"
 
-[node name="ScatterItem" type="Node3D" parent="ScatterPlants" unique_id=526610314]
+[node name="ScatterItem" type="Node3D" parent="Scatter/ScatterPlants" unique_id=526610314]
 script = ExtResource("6_svqug")
 proportion = 1
 source_scale_multiplier = 0.02
 path = "uid://qm0dyq53t84t"
 
-[node name="ScatterShape" type="Node3D" parent="ScatterPlants" unique_id=1163581581]
+[node name="ScatterShape" type="Node3D" parent="Scatter/ScatterPlants" unique_id=1163581581]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 5, -3, 0)
 visible = false
 script = ExtResource("11_81qat")
 shape = SubResource("Resource_0mdt0")
 
-[node name="PathNegative" type="Node3D" parent="ScatterPlants" unique_id=33919515]
+[node name="PathNegative" type="Node3D" parent="Scatter/ScatterPlants" unique_id=33919515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 16)
 visible = false
 script = ExtResource("11_81qat")
 negative = true
 shape = SubResource("Resource_kbiga")
 metadata/_custom_type_script = "uid://05hr8405hwn3"
+
+[node name="ScatterPlantsHillTop" type="Node3D" parent="Scatter" unique_id=1832936734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 211.90106, 9, -128)
+script = ExtResource("7_fgqhx")
+modifier_stack = SubResource("Resource_518iw")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://cjr2dvbfn8isb"
+
+[node name="ScatterItem" type="Node3D" parent="Scatter/ScatterPlantsHillTop" unique_id=40158713]
+script = ExtResource("6_svqug")
+proportion = 1
+source_scale_multiplier = 0.02
+path = "uid://qm0dyq53t84t"
+
+[node name="ScatterShape" type="Node3D" parent="Scatter/ScatterPlantsHillTop" unique_id=481842227]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 5, -3, 0)
+visible = false
+script = ExtResource("11_81qat")
+shape = SubResource("Resource_weu5v")
+
+[node name="PathNegative" type="Node3D" parent="Scatter/ScatterPlantsHillTop" unique_id=1229742418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 16)
+visible = false
+script = ExtResource("11_81qat")
+negative = true
+shape = SubResource("Resource_bvbmf")
+metadata/_custom_type_script = "uid://05hr8405hwn3"
+
+[node name="ScatterPlantsLeft" type="Node3D" parent="Scatter" unique_id=1715165223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175, 9, -229.77023)
+script = ExtResource("7_fgqhx")
+modifier_stack = SubResource("Resource_b105l")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://cjr2dvbfn8isb"
+
+[node name="ScatterItem" type="Node3D" parent="Scatter/ScatterPlantsLeft" unique_id=745017921]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.42268372)
+script = ExtResource("6_svqug")
+proportion = 1
+source_scale_multiplier = 0.02
+path = "uid://qm0dyq53t84t"
+
+[node name="ScatterShape" type="Node3D" parent="Scatter/ScatterPlantsLeft" unique_id=1380403866]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -16.5802, -3, 0.4820099)
+script = ExtResource("11_81qat")
+shape = SubResource("Resource_fskly")
+
+[node name="ScatterPlantsRight" type="Node3D" parent="Scatter" unique_id=4742531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175, 5.4405117, -35.952805)
+script = ExtResource("7_fgqhx")
+modifier_stack = SubResource("Resource_522vh")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://cjr2dvbfn8isb"
+
+[node name="ScatterItem" type="Node3D" parent="Scatter/ScatterPlantsRight" unique_id=932753239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.42268372)
+script = ExtResource("6_svqug")
+proportion = 1
+source_scale_multiplier = 0.02
+path = "uid://qm0dyq53t84t"
+
+[node name="ScatterShape" type="Node3D" parent="Scatter/ScatterPlantsRight" unique_id=1270271010]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -16.5802, -3, 0.4820099)
+script = ExtResource("11_81qat")
+shape = SubResource("Resource_se2yi")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=609140758]
+transform = Transform3D(0.5210097, 0.14087652, -0.84184486, 0, 0.9862856, 0.1650476, 0.8535508, -0.0859914, 0.51386434, 114.401, 16.736, -74.047)
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=418107749]
+current = true
+
+[node name="SpringArm3D2" type="SpringArm3D" parent="." unique_id=859892696]
+transform = Transform3D(0.8452619, 0.088193566, -0.527024, 0, 0.9862856, 0.1650476, 0.5343523, -0.13950844, 0.83366966, 114.026, 16.406, -97.437)
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D2" unique_id=1533376122]
+
+[node name="SpringArm3D3" type="SpringArm3D" parent="." unique_id=1733448706]
+transform = Transform3D(0.5210097, 0.14087652, -0.84184486, 0, 0.9862856, 0.1650476, 0.8535508, -0.0859914, 0.51386434, 126.591, 25.501, -74.047)
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D3" unique_id=1056914986]
