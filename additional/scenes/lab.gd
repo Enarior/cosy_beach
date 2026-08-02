@@ -4,7 +4,7 @@ extends Node3D
 
 var active_camera = 0
 
-func _process(delta):
+func _input(delta):
 	if Input.is_action_pressed("switch_camera"):
 		if active_camera < cameras.size()-1:
 			cameras[active_camera].current = false
@@ -15,3 +15,4 @@ func _process(delta):
 			cameras[0].current = true
 			active_camera = 0
 		pass
+		print(active_camera)
