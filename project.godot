@@ -165,4 +165,20 @@ common/physics_interpolation=true
 [rendering]
 
 lights_and_shadows/use_physical_light_units=true
+environment/defaults/default_clear_color=Color(0.080783345, 0.080783345, 0.0807833, 1)
 anti_aliasing/quality/screen_space_aa=1
+
+[shader_globals]
+
+WindDirection={
+"type": "vec3",
+"value": Vector3(0, 0, 0)
+}
+GaleStrength={
+"type": "float",
+"value": 0.0
+}
+WindIntensity={
+"type": "float",
+"value": 0.0
+}
