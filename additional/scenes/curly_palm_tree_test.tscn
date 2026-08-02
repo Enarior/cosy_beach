@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://cn8at4s0gkjbb"]
+
+[ext_resource type="PackedScene" uid="uid://be10nk6ulgopb" path="res://additional/models/palm_test.glb" id="2_3p5g5"]
+[ext_resource type="AnimationLibrary" uid="uid://cc5inweyv5hb1" path="res://additional/animations/trees_anim_library.res" id="2_qahwj"]
+[ext_resource type="Shader" uid="uid://c1gcb1hbpblf5" path="res://additional/shaders/curly_palm_tree_test.gdshader" id="3_qahwj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qahwj"]
+sky_top_color = Color(0.67062813, 0.7315863, 0.8097133, 1)
+sky_horizon_color = Color(0.89945745, 0.90878487, 0.92141914, 1)
+ground_bottom_color = Color(0.13429987, 0.11065138, 0.083061464, 1)
+ground_horizon_color = Color(0.89945745, 0.90878487, 0.92141914, 1)
+
+[sub_resource type="Sky" id="Sky_uc1r0"]
+sky_material = SubResource("ProceduralSkyMaterial_qahwj")
+
+[sub_resource type="Environment" id="Environment_f08bc"]
+background_mode = 2
+sky = SubResource("Sky_uc1r0")
+glow_enabled = true
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ty334"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aiird"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qahwj"]
+render_priority = 0
+shader = ExtResource("3_qahwj")
+shader_parameter/alpha_clip_threshold = 0.25
+shader_parameter/mesh_single_faced = true
+shader_parameter/use_color_noise = false
+shader_parameter/color_noise_small_freq = 9.0
+shader_parameter/color_noise_large_freq = 1.0
+shader_parameter/leaf_tiling = Vector2(1, 1)
+shader_parameter/leaf_offset = Vector2(0, 0)
+shader_parameter/leaf_metallic = 0.0
+shader_parameter/leaf_smoothness = 0.2
+shader_parameter/leaf_base_color = Color(1, 1, 1, 1)
+shader_parameter/leaf_noise_color = Color(1, 1, 1, 1)
+shader_parameter/leaf_noise_large_color = Color(1, 1, 1, 1)
+shader_parameter/leaf_flat_color = false
+shader_parameter/enable_leaf_normal = false
+shader_parameter/leaf_normal_tiling = Vector2(1, 1)
+shader_parameter/leaf_normal_offset = Vector2(0, 0)
+shader_parameter/leaf_normal_strength = 0.5
+shader_parameter/leaf_ao_intensity = 0.5
+shader_parameter/trunk_tiling = Vector2(1, 1)
+shader_parameter/trunk_offset = Vector2(0, 0)
+shader_parameter/trunk_metallic = 0.0
+shader_parameter/trunk_smoothness = 0.2
+shader_parameter/trunk_base_color = Color(1, 1, 1, 1)
+shader_parameter/trunk_noise_color = Color(1, 1, 1, 1)
+shader_parameter/trunk_flat_color = false
+shader_parameter/trunk_emissive_color = Color(0, 0, 0, 0)
+shader_parameter/trunk_emissive_tiling = Vector2(1, 1)
+shader_parameter/trunk_emissive_offset = Vector2(0, 0)
+shader_parameter/enable_trunk_normal = false
+shader_parameter/trunk_normal_tiling = Vector2(1, 1)
+shader_parameter/trunk_normal_offset = Vector2(0, 0)
+shader_parameter/trunk_normal_strength = 0.5
+shader_parameter/trunk_ao_intensity = 0.5
+shader_parameter/enable_frosting = false
+shader_parameter/frosting_color = Color(0, 0, 0, 0)
+shader_parameter/frosting_falloff = 1.0
+shader_parameter/frosting_height = 2.8
+shader_parameter/frosting_use_world_normal = false
+shader_parameter/enable_emission = false
+shader_parameter/emissive_color = Color(0, 0, 0, 0)
+shader_parameter/emissive_2_color = Color(0, 0, 0, 0)
+shader_parameter/emissive_tiling = Vector2(1, 1)
+shader_parameter/emissive_offset = Vector2(0, 0)
+shader_parameter/emissive_2_tiling = Vector2(1, 1)
+shader_parameter/emissive_2_offset = Vector2(0, 0)
+shader_parameter/emissive_amount = 0.0
+shader_parameter/enable_pulse = false
+shader_parameter/emissive_pulse_tiling = 0.03
+shader_parameter/emissive_pulse_speed = 0.0
+shader_parameter/use_vertex_color_wind = false
+shader_parameter/use_global_weather_controller = true
+shader_parameter/enable_breeze = false
+shader_parameter/breeze_strength = 0.2
+shader_parameter/enable_light_wind = false
+shader_parameter/light_wind_strength = 0.2
+shader_parameter/light_wind_y_strength = 1.0
+shader_parameter/light_wind_y_offset = 0.0
+shader_parameter/light_wind_use_leaf_fade = false
+shader_parameter/enable_strong_wind = false
+shader_parameter/strong_wind_strength = 0.2
+shader_parameter/strong_wind_frequency = 0.5
+shader_parameter/enable_wind_twist = false
+shader_parameter/wind_twist_strength = 0.15
+shader_parameter/gale_blend = 1.0
+shader_parameter/non_global_wind_direction = Vector3(1, 0, 0)
+shader_parameter/non_global_wind_intensity = 0.2
+shader_parameter/non_global_gale_strength = 0.2
+
+[sub_resource type="SphereMesh" id="SphereMesh_f1dls"]
+material = SubResource("ShaderMaterial_qahwj")
+
+[node name="CurlyPalmTree" type="Node3D" unique_id=843763536]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1292377139]
+environment = SubResource("Environment_f08bc")
+camera_attributes = SubResource("CameraAttributesPractical_ty334")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1748806983]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_energy = 2.0
+shadow_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1713617088]
+libraries/ = SubResource("AnimationLibrary_aiird")
+libraries/trees_anim_library = ExtResource("2_qahwj")
+autoplay = &"trees_anim_library/wind"
+
+[node name="palm_test" parent="." unique_id=739495339 instance=ExtResource("2_3p5g5")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1282781101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1230605, 0)
+mesh = SubResource("SphereMesh_f1dls")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=378206000]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16562319, 0.9957528, 2.216738)

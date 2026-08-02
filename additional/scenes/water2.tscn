@@ -53,10 +53,10 @@ shader_parameter/color_deep = Color(0.36078432, 0.53333336, 0.4627451, 0.4392157
 shader_parameter/color_shallow = Color(0.65410227, 0.08811078, 0.34678814, 0.4862745)
 shader_parameter/beers_law = 2.0
 shader_parameter/depth_offset = -0.75
-shader_parameter/edge_scale = 0.1
+shader_parameter/edge_scale = 0.3
 shader_parameter/near = 1.0
 shader_parameter/far = 100.0
-shader_parameter/edge_color = Color(0.36587444, 0.7524983, 0.8554684, 1)
+shader_parameter/edge_color = Color(0.68780756, 0.90211755, 0.96381336, 1)
 
 [node name="Water2" type="MeshInstance3D" unique_id=768203770]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0436472, -0.00064568967, -0.000564456)
