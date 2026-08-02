@@ -59,7 +59,6 @@ shader_parameter/far = 100.0
 shader_parameter/edge_color = Color(0.68780756, 0.90211755, 0.96381336, 1)
 
 [node name="Water2" type="MeshInstance3D" unique_id=768203770]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0436472, -0.00064568967, -0.000564456)
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_jfaa8")
 surface_material_override/0 = SubResource("ShaderMaterial_nckmc")
