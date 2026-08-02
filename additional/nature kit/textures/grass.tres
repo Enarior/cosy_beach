@@ -1,6 +1,0 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://fbfyumini1aq"]
-
-[resource]
-resource_name = "grass"
-albedo_color = Color(0.29888245, 0.75386876, 0.53648615, 1)
-metallic = 1.0

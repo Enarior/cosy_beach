@@ -14,11 +14,11 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="portfolio"
+config/name="Cosy beach"
 config/tags=PackedStringArray("starterkit")
 run/main_scene="uid://6rgd4nt8x1a6"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.png"
+config/icon="uid://csn5q1hkfae20"
 
 [autoload]
 
