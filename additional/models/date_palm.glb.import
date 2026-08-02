@@ -36,10 +36,33 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-materials/extract=2
+materials/extract=0
 materials/extract_format=1
 materials/extract_path="res://additional/materials"
-_subresources={}
+_subresources={
+"materials": {
+"Tree_0Mat": {
+"use_external/enabled": false,
+"use_external/fallback_path": "res://additional/materials/Tree_0Mat.res",
+"use_external/path": "res://additional/materials/Tree_0Mat.res"
+},
+"Tree_1Mat": {
+"use_external/enabled": false,
+"use_external/fallback_path": "res://additional/materials/Tree_1Mat.res",
+"use_external/path": "res://additional/materials/Tree_1Mat.res"
+},
+"Tree_2Mat": {
+"use_external/enabled": false,
+"use_external/fallback_path": "res://additional/materials/Tree_2Mat.res",
+"use_external/path": "res://additional/materials/Tree_2Mat.res"
+},
+"Tree_3Mat": {
+"use_external/enabled": false,
+"use_external/fallback_path": "res://additional/materials/Tree_3Mat.res",
+"use_external/path": "res://additional/materials/Tree_3Mat.res"
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=2
 gltf/texture_map_mode=1
