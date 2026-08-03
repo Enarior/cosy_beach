@@ -23,7 +23,6 @@ I also had fun adding a little soundtrack :-)
 
 UI : https://kenney.nl/assets/input-prompts
 
-​
 ## Tutorials
 
 - [Water shader](https://www.youtube.com/watch?v=7L6ZUYj1hs8)
