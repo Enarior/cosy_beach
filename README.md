@@ -1,3 +1,5 @@
+![banner](banner.png)
+
 ## Godot Learning Project
 
 Itch.io : https://enarior.itch.io/cosy-beach
